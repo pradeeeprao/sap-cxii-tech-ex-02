@@ -6,6 +6,19 @@ Build a data ETL microservice that ingests customer order data from CSV files, c
 
 ---
 
+## Path by role
+
+This exercise is used for two roles:
+
+- **DS Expert** — complete Parts 1, 2, 3. The Bonus section is optional.
+- **AI Architect** — complete Parts 1, 2, 3, **and Part 4 (architectural extension, below)**. Skip the Bonus.
+
+Time budget:
+- DS Expert: 3–4 hours
+- AI Architect: 5–6 hours (includes Part 4 write-up)
+
+---
+
 ## Dataset
 
 You will be provided with one or more CSV files using the following schema:
@@ -110,6 +123,21 @@ Implement a FastAPI service with these endpoints:
   - Deployment (with readiness/liveness probes).
   - Service (ClusterIP).
   - ConfigMap for configurable parameters (e.g., DB path).
+
+---
+
+## Part 4 — Architectural Extension (AI Architect only)
+
+You have built a single-customer service. Now scale it to **50 enterprise customers**, each with their own data residency requirement (EU customers in eu-west, US in us-east, KSA on local cloud).
+
+Write a ≤ 1-page architectural extension (diagrams welcome) covering:
+
+1. **What stays, what splits** — which components are shared vs replicated per region/tenant?
+2. **Data plane vs control plane** — where does config live, how do schema migrations propagate?
+3. **Cost vs control trade-off** — N independent copies vs one shared multi-region cluster — what's your call and why?
+4. **One specific decision** — pick the highest-leverage architectural choice and explain the trade-offs you weighed.
+
+We are NOT asking you to implement this. We are looking for architect-grade reasoning in writing.
 
 ---
 
